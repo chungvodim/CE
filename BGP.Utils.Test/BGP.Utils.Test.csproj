@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5913AA0A-35D7-4DDD-A611-4C3D3B3BB572}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BGP.Utils.Test</RootNamespace>
+    <AssemblyName>BGP.Utils.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DryIoc, Version=2.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DryIoc.dll.2.9.2\lib\net45\DryIoc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LINQtoCSV, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LINQtoCSV.1.5.0.0\lib\net35\LINQtoCSV.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UnitTest\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.4.0.70, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.4.0\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.4.0.70, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.4.0\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.4.0.70, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.4.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise />
+  </Choose>
+  <ItemGroup>
+    <Compile Include="CacheManagerTest.cs" />
+    <Compile Include="Dtos\Category.cs" />
+    <Compile Include="Dtos\Comment.cs" />
+    <Compile Include="Dtos\Post.cs" />
+    <Compile Include="Dtos\User.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\Post.cs" />
+    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="MongoRepositoryTest.cs" />
+    <Compile Include="MongoServiceTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilsTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BGP.Dto\BGP.Dto.csproj">
+      <Project>{79C91D9B-2892-484B-9FFD-167D0AACC27C}</Project>
+      <Name>BGP.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Entity\BGP.Entity.csproj">
+      <Project>{184a7ab2-f999-43d7-b3fa-fe038cacb2b2}</Project>
+      <Name>BGP.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Enum\BGP.Enum.csproj">
+      <Project>{4E5EA798-F0E6-4BE3-B5E3-D332AF3A9241}</Project>
+      <Name>BGP.Enum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.CacheManager.MemoryCache\BGP.Utils.CacheManager.MemoryCache.csproj">
+      <Project>{a5aa1eda-2d1f-48ea-ad8d-cb1770e704f8}</Project>
+      <Name>BGP.Utils.CacheManager.MemoryCache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.CacheManager\BGP.Utils.CacheManager.csproj">
+      <Project>{5fc85296-94e5-4dda-a352-3af5a64d4c6f}</Project>
+      <Name>BGP.Utils.CacheManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Common\BGP.Utils.Common.csproj">
+      <Project>{7b686c98-a81c-4975-ab74-7c4e5460503a}</Project>
+      <Name>BGP.Utils.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Repository.EntityFramework\BGP.Utils.Repository.EntityFramework.csproj">
+      <Project>{61c0ccd8-dd0c-47d2-9aa8-1ad24c23b1ea}</Project>
+      <Name>BGP.Utils.Repository.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Repository.Mongo\BGP.Utils.Repository.Mongo.csproj">
+      <Project>{d06dffb8-18dc-46fc-be75-29cf83d6c467}</Project>
+      <Name>BGP.Utils.Repository.Mongo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Repository\BGP.Utils.Repository.csproj">
+      <Project>{431876fd-ef47-43a6-b112-93223e82e474}</Project>
+      <Name>BGP.Utils.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Service.EntityFramework\BGP.Utils.Service.EntityFramework.csproj">
+      <Project>{a60f4594-4fe9-434f-9f49-c4445d45193a}</Project>
+      <Name>BGP.Utils.Service.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Service.Mongo\BGP.Utils.Service.Mongo.csproj">
+      <Project>{a53124af-bea5-48b7-ae1a-852540e99d97}</Project>
+      <Name>BGP.Utils.Service.Mongo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Service\BGP.Utils.Service.csproj">
+      <Project>{22118f66-7382-4030-ae25-2834e5b30901}</Project>
+      <Name>BGP.Utils.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Web\BGP.Web.csproj">
+      <Project>{2244F01D-967E-47FA-AB71-A37A3132C31A}</Project>
+      <Name>BGP.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

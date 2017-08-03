@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3AC62090-2AD6-4465-9F13-DA46F31BAB62}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CE.Bootstrapper</RootNamespace>
+    <AssemblyName>CE.Bootstrapper</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DryIoc">
+      <HintPath>..\packages\DryIoc.dll.2.9.2\lib\net45\DryIoc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\MongoDB.Bson.2.4.0\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\MongoDB.Driver.2.4.0\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.4.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMapper.cs" />
+    <Compile Include="DryIoC.cs" />
+    <Compile Include="Mapper\AdministrationMapper.cs" />
+    <Compile Include="Mapper\LogMapper.cs" />
+    <Compile Include="Mapper\MasterDataMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BGP.Utils.CacheManager.MemoryCache\BGP.Utils.CacheManager.MemoryCache.csproj">
+      <Project>{a5aa1eda-2d1f-48ea-ad8d-cb1770e704f8}</Project>
+      <Name>BGP.Utils.CacheManager.MemoryCache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.CacheManager\BGP.Utils.CacheManager.csproj">
+      <Project>{5fc85296-94e5-4dda-a352-3af5a64d4c6f}</Project>
+      <Name>BGP.Utils.CacheManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Repository.EntityFramework\BGP.Utils.Repository.EntityFramework.csproj">
+      <Project>{61c0ccd8-dd0c-47d2-9aa8-1ad24c23b1ea}</Project>
+      <Name>BGP.Utils.Repository.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Repository.Mongo\BGP.Utils.Repository.Mongo.csproj">
+      <Project>{d06dffb8-18dc-46fc-be75-29cf83d6c467}</Project>
+      <Name>BGP.Utils.Repository.Mongo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Repository\BGP.Utils.Repository.csproj">
+      <Project>{431876fd-ef47-43a6-b112-93223e82e474}</Project>
+      <Name>BGP.Utils.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Service.EntityFramework\BGP.Utils.Service.EntityFramework.csproj">
+      <Project>{a60f4594-4fe9-434f-9f49-c4445d45193a}</Project>
+      <Name>BGP.Utils.Service.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Service.Mongo\BGP.Utils.Service.Mongo.csproj">
+      <Project>{a53124af-bea5-48b7-ae1a-852540e99d97}</Project>
+      <Name>BGP.Utils.Service.Mongo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Service\BGP.Utils.Service.csproj">
+      <Project>{22118f66-7382-4030-ae25-2834e5b30901}</Project>
+      <Name>BGP.Utils.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CE.Repository\CE.Repository.csproj">
+      <Project>{19502781-6142-4408-b491-20617a82a6f4}</Project>
+      <Name>CE.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
