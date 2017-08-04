@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BaseDto.cs" />
     <Compile Include="ImageDto.cs" />
+    <Compile Include="OneTimePasswordDto.cs" />
     <Compile Include="UserLogDto.cs" />
     <Compile Include="UserLoginLogDto.cs" />
     <Compile Include="RoleDto.cs" />

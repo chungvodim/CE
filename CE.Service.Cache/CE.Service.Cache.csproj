@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C452EBE-D212-45C9-B923-0FB95C3509BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CE.Service.Cache</RootNamespace>
+    <AssemblyName>CE.Service.Cache</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.Extended.Async.6.1.1.0\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CacheAdministrationService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BGP.Utils.CacheManager\BGP.Utils.CacheManager.csproj">
+      <Project>{5fc85296-94e5-4dda-a352-3af5a64d4c6f}</Project>
+      <Name>BGP.Utils.CacheManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Repository.EntityFramework\BGP.Utils.Repository.EntityFramework.csproj">
+      <Project>{61c0ccd8-dd0c-47d2-9aa8-1ad24c23b1ea}</Project>
+      <Name>BGP.Utils.Repository.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Repository.Mongo\BGP.Utils.Repository.Mongo.csproj">
+      <Project>{d06dffb8-18dc-46fc-be75-29cf83d6c467}</Project>
+      <Name>BGP.Utils.Repository.Mongo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Repository\BGP.Utils.Repository.csproj">
+      <Project>{431876fd-ef47-43a6-b112-93223e82e474}</Project>
+      <Name>BGP.Utils.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Service.EntityFramework\BGP.Utils.Service.EntityFramework.csproj">
+      <Project>{a60f4594-4fe9-434f-9f49-c4445d45193a}</Project>
+      <Name>BGP.Utils.Service.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Service.Mongo\BGP.Utils.Service.Mongo.csproj">
+      <Project>{a53124af-bea5-48b7-ae1a-852540e99d97}</Project>
+      <Name>BGP.Utils.Service.Mongo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGP.Utils.Service\BGP.Utils.Service.csproj">
+      <Project>{22118f66-7382-4030-ae25-2834e5b30901}</Project>
+      <Name>BGP.Utils.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CE.Dto\CE.Dto.csproj">
+      <Project>{069c3aee-bf49-40c7-875a-c19d3c80152b}</Project>
+      <Name>CE.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CE.Entity\CE.Entity.csproj">
+      <Project>{b7feb011-f258-41f7-9ed8-6101757a2ec1}</Project>
+      <Name>CE.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CE.Enum\CE.Enum.csproj">
+      <Project>{27b992eb-45a1-47a8-9e5b-ccd94018cc72}</Project>
+      <Name>CE.Enum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CE.Repository\CE.Repository.csproj">
+      <Project>{19502781-6142-4408-b491-20617a82a6f4}</Project>
+      <Name>CE.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CE.Service.Implementation\CE.Service.Implementation.csproj">
+      <Project>{90a1541d-eab1-4237-8888-c2fcb3b75097}</Project>
+      <Name>CE.Service.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CE.Service\CE.Service.csproj">
+      <Project>{0D124B83-F585-42F2-BD71-CC8A8E5A0F96}</Project>
+      <Name>CE.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

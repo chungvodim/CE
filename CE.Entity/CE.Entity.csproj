@@ -50,6 +50,7 @@
     <Compile Include="Log\UserLog.cs" />
     <Compile Include="Log\UserLoginLog.cs" />
     <Compile Include="Main\Images.cs" />
+    <Compile Include="Main\OneTimePassword.cs" />
     <Compile Include="Main\Role.cs" />
     <Compile Include="Main\User.cs" />
     <Compile Include="Main\UserClaim.cs" />
