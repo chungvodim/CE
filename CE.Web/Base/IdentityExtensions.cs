@@ -64,6 +64,12 @@ namespace CE.Web
             return Convert.ToInt32(claim.Value);
         }
 
+        public static bool? GetConsent(this IIdentity identity)
+        {
+            //return (identity as ClaimsIdentity)?.FirstOrDefault<bool>(CustomClaimTypes.ProtoolConsent);
+            return true;
+        }
+
         private static string FirstOrNull(this ClaimsIdentity identity, string claimType)
         {
             var val = identity.FindFirst(claimType);

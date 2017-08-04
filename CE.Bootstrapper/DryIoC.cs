@@ -11,7 +11,7 @@ using System.Data.Entity;
 using CE.Repository.Mongo;
 using BGP.Utils.Repository.EntityFramework;
 
-namespace BGP.Bootstrapper
+namespace CE.Bootstrapper
 {
     public class DryIoC
     {
@@ -27,20 +27,20 @@ namespace BGP.Bootstrapper
             // Sql EF services
             container.Register<MainContext>(defaultReuse);
             container.Register<MainEntityFrameworkRepository>(defaultReuse);
-            container.Register<Utils.Service.EntityFramework.BaseService<MainEntityFrameworkRepository>>(defaultReuse);
+            container.Register<BGP.Utils.Service.EntityFramework.BaseService<MainEntityFrameworkRepository>>(defaultReuse);
             //container.Register<IAdminstrationService, AdministrationService>(defaultReuse);
             //container.Register<IMasterDataService, MasterDataService>(defaultReuse);
 
             // Log service
             container.Register<LogContext>(defaultReuse);
             container.Register<LogEntityFrameworkRepository>(defaultReuse);
-            container.Register<Utils.Service.EntityFramework.BaseService<LogEntityFrameworkRepository>>(defaultReuse);
+            container.Register<BGP.Utils.Service.EntityFramework.BaseService<LogEntityFrameworkRepository>>(defaultReuse);
             //container.Register<ILogService, LogService>(defaultReuse);
 
             // Mongo service
             container.RegisterDelegate<IMongoDatabase>(x => MongoDatabaseFactory.Create(), defaultReuse);
             container.Register<MongoRepository>(defaultReuse);
-            container.Register<Utils.Service.Mongo.BaseService<MongoRepository>>(defaultReuse);
+            container.Register<BGP.Utils.Service.Mongo.BaseService<MongoRepository>>(defaultReuse);
         }
     }
 }

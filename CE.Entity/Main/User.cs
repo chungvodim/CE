@@ -30,7 +30,7 @@ namespace CE.Entity.Main
         public string PostalCode { get; set; }
         public string City { get; set; }
 
-        public bool ProtoolConsent { get; set; }
+        public bool Consent { get; set; }
         public bool MarketingConsent { get; set; }
 
         public Enum.UserStatus UserStatus { get; set; }
@@ -59,6 +59,7 @@ namespace CE.Entity.Main
             userIdentity.AddClaim(new Claim(CustomClaimTypes.LastName, LastName));
             userIdentity.AddClaim(new Claim(CustomClaimTypes.IsImpersonated, IsImpersonated.ToString()));
             userIdentity.AddClaim(new Claim(CustomClaimTypes.ImpersonatorID, ImpersonatorID.ToString()));
+            userIdentity.AddClaim(new Claim(CustomClaimTypes.Consent, Consent.ToString()));
 
             return userIdentity;
         }
@@ -79,5 +80,6 @@ namespace CE.Entity.Main
         public const string LastName = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/LastName";
         public const string IsImpersonated = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/IsPersonated";
         public const string ImpersonatorID = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/ImpersonatorID";
+        public const string Consent = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/ImpersonatorID";
     }
 }

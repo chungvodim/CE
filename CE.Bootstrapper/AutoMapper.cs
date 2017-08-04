@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using BGP.Bootstrapper.Mapper;
+using CE.Bootstrapper.Mapper;
 using System.Linq;
 
-namespace BGP.Bootstrapper
+namespace CE.Bootstrapper
 {
     public static class AutoMapper
     {

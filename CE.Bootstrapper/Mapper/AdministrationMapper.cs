@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BGP.Bootstrapper.Mapper
+namespace CE.Bootstrapper.Mapper
 {
     internal class AdministrationMapper
     {

@@ -18,14 +18,7 @@ namespace CE.Repository.Main
         {
             try
             {
-                // remove Mongo listing data
-                // Do not remove Mongo listing data on Staging
-                if (System.Configuration.ConfigurationManager.AppSettings["DropListingDataIfModelChanges"] == "True")
-                {
-                    var mongoClient = Mongo.MongoDatabaseFactory.Create();
-
-                    //mongoClient.DropCollection();
-                }
+                var mongoClient = Mongo.MongoDatabaseFactory.Create();
 
                 // add database initial data here
 
@@ -51,7 +44,7 @@ namespace CE.Repository.Main
                     Email = "admin@CE.com",
                     FirstName = "admin",
                     LastName = "ce",
-                    PasswordHash = passwordHasher.HashPassword("123456"),
+                    PasswordHash = passwordHasher.HashPassword("Qwerty123$%"),
                     DateOfBirth = DateTime.Today,
                     Gender = "m",
                     PostalCode = "1000",
@@ -75,7 +68,7 @@ namespace CE.Repository.Main
                     PostalCode = "1000",
                     City = "Bruxelles",
                     PhoneNumber = "06-13345678",
-                    PasswordHash = passwordHasher.HashPassword("123456"),
+                    PasswordHash = passwordHasher.HashPassword("Qwerty123$"),
                     EmailConfirmed = true,
                     SecurityStamp = Guid.NewGuid().ToString(),
                     LockoutEnabled = true,
@@ -95,7 +88,7 @@ namespace CE.Repository.Main
                     PostalCode = "1000",
                     City = "Bruxelles",
                     PhoneNumber = "06-22345678",
-                    PasswordHash = passwordHasher.HashPassword("123456"),
+                    PasswordHash = passwordHasher.HashPassword("Qwerty123$"),
                     EmailConfirmed = true,
                     SecurityStamp = Guid.NewGuid().ToString(),
                     LockoutEnabled = true,
