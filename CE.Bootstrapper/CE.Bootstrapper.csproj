@@ -101,6 +101,14 @@
       <Project>{22118f66-7382-4030-ae25-2834e5b30901}</Project>
       <Name>BGP.Utils.Service</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CE.Dto\CE.Dto.csproj">
+      <Project>{069C3AEE-BF49-40C7-875A-C19D3C80152B}</Project>
+      <Name>CE.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CE.Entity\CE.Entity.csproj">
+      <Project>{B7FEB011-F258-41F7-9ED8-6101757A2EC1}</Project>
+      <Name>CE.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CE.Repository\CE.Repository.csproj">
       <Project>{19502781-6142-4408-b491-20617a82a6f4}</Project>
       <Name>CE.Repository</Name>
