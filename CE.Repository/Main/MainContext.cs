@@ -13,9 +13,9 @@ namespace CE.Repository.Main
         {
             // IMPORTANT!!!
             // Don't use this line to re-create DB, it may delete translated resources table
-            //Database.SetInitializer(new BEGAITDatabaseInitializer());
+            Database.SetInitializer(new MainDatabaseInitializer());
             // --------------------------------------------------------
-            Database.SetInitializer<MainContext>(null);
+            //Database.SetInitializer<MainContext>(null);
         }
 
         // Your context has been configured to use a 'BEGAIT' connection string from your application's 

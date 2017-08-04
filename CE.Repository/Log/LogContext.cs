@@ -14,9 +14,9 @@ namespace CE.Repository.Log
         {
             // IMPORTANT!!!
             // Don't use this line to re-create DB, it may delete translated resources table
-            //Database.SetInitializer(new BEGAITLogDatabaseInitializer());
+            Database.SetInitializer(new LogDatabaseInitializer());
             // --------------------------------------------------------
-            Database.SetInitializer<LogContext>(null);
+            //Database.SetInitializer<LogContext>(null);
         }
 
         // Your context has been configured to use a 'BEGAIT' connection string from your application's 

@@ -18,11 +18,7 @@ namespace CE.Repository.Main
         {
             try
             {
-                var mongoClient = Mongo.MongoDatabaseFactory.Create();
-
-                // add database initial data here
-
-
+                //var mongoClient = Mongo.MongoDatabaseFactory.Create();
 
                 // role
                 var superAdminRole = new Role() { Name = CE.Enum.UserRole.SuperAdmin.GetDescription() };
@@ -40,8 +36,8 @@ namespace CE.Repository.Main
                 var passwordHasher = new PasswordHasher();
                 var superAdminUser = new User()
                 {
-                    UserName = "admin@CE.com",
-                    Email = "admin@CE.com",
+                    UserName = "admin@ce.com",
+                    Email = "admin@ce.com",
                     FirstName = "admin",
                     LastName = "ce",
                     PasswordHash = passwordHasher.HashPassword("Qwerty123$%"),

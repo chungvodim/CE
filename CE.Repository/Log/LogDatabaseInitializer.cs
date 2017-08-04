@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace CE.Repository.Log
 {
-    public class BEGAITLogDatabaseInitializer : DropCreateDatabaseIfModelChanges<LogContext>
+    public class LogDatabaseInitializer : DropCreateDatabaseIfModelChanges<LogContext>
     {
         protected override void Seed(LogContext context)
         {
@@ -24,7 +24,7 @@ namespace CE.Repository.Log
         private void ExecuteSqlFile(LogContext context, string embededFileName)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = typeof(BEGAITLogDatabaseInitializer).Assembly.GetName().Name + "." + embededFileName;
+            var resourceName = typeof(LogDatabaseInitializer).Assembly.GetName().Name + "." + embededFileName;
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             {
